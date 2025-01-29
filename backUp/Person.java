@@ -1,15 +1,15 @@
-package contacts;
+package contacts.backUp;
 
 import java.time.LocalDate;
 
-public class Person extends Record {
+public class Person extends AbstractRecord {
     private String name;
     private String surname;
     private String gender;
     private LocalDate birthDate;
 
-    public Person(String name, String surname, String phoneNumber, String gender, LocalDate birthDate,boolean isPerson){
-        super(phoneNumber,isPerson);
+    public Person(String name, String surname, String phoneNumber, String gender, LocalDate birthDate){
+        super(phoneNumber);
         //super(isPerson);
         this.name=name;
         this.surname=surname;

@@ -1,18 +1,19 @@
-package contacts;
+package contacts.backUp;
+import java.io.Serializable;
 import java.time.LocalDate;
-import java.time.LocalTime;
+import java.util.List;
 
-abstract class   Record {
+abstract class AbstractRecord  implements Serializable {
     private String phoneNumber;
     private LocalDate createdDate;
     private LocalDate lastEditedDate;
-    private boolean isPerson;
+    //private boolean isPerson;
 
-    public Record(String phoneNumber,boolean isPerson){
+    public AbstractRecord(String phoneNumber){
         this.phoneNumber = phoneNumber;
         this.createdDate = LocalDate.now();
         this.lastEditedDate=LocalDate.now();
-        this.isPerson=isPerson;
+
     }
 
     public String getPhoneNumber(){
@@ -31,9 +32,6 @@ abstract class   Record {
         this.lastEditedDate = lastEditedDate;
     }
 
-    public boolean isPerson (){
-        return isPerson;
-    }
 
     public abstract void printDetails();
 
