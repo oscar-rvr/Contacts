@@ -7,6 +7,9 @@ abstract class AbstractRecord  implements Serializable {
     private String phoneNumber;
     private LocalDate createdDate;
     private LocalDate lastEditedDate;
+    abstract List<String> getFields();
+    abstract void setField(String field, String value);
+    abstract String getField(String field);
     //private boolean isPerson;
 
     public AbstractRecord(String phoneNumber){
@@ -32,8 +35,12 @@ abstract class AbstractRecord  implements Serializable {
         this.lastEditedDate = lastEditedDate;
     }
 
+    public abstract String printName();
 
-    public abstract void printDetails();
+
+    //public abstract void printDetails();
+
+    public abstract void printInfo();
 
     public void setPhoneNumber(String phoneNumber){
         if(isValidNumber(phoneNumber)){
